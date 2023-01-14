@@ -10,10 +10,12 @@ describe("Likes", () => {
         title: "Umbriel",
         techs: ["Node", "Express", "TypeScript"]
       });
-
+      
     let response = await request(app).post(
-      `/repositories/${repository.body.id}/like`
+    `/repositories/${repository.body.id}/like`
     );
+    
+    console.log('RESPONSE:', response.body)
 
     expect(response.body).toMatchObject({
       likes: 1
